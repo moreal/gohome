@@ -24,7 +24,7 @@ class TimerContainer extends Component {
     render() {
         const { time } = this.state;
         return (
-            <div id='timer'>
+            <div id='timer-container'>
                 <DaysCompoenet time={time} />
                 <TimeComponent time={time} />
             </div>

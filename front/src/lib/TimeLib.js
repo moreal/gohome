@@ -1,8 +1,6 @@
-import React from 'react';
-
 class TimeLib {
     static get_dday(datetime) {
-        return `D-${datetime.getDay()}`;
+        return `D-${datetime.getDay() === 0 ? 'Day' : datetime.getDay() }`;
     }
 
     static get_times(datetime) {

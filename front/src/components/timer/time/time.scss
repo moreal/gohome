@@ -1,6 +1,11 @@
 @import "../variables";
 
 #time {
+    font-size: $font-size;
     color: $time-color;
     display: inline-block;
+    
+    .middle-size {
+        font-size: $font-size - 5vh;
+    }
 }

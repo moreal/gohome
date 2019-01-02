@@ -1,6 +1,7 @@
 @import '../variables';
 
 #days {
+    font-size: $font-size - 5vh;
  color: $days-color;
  display: inline-block;
 }

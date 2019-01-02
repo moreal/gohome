@@ -1,9 +1,14 @@
+@import 'variables.scss';
+
 #timer {
-    font-size: 12vh;
+    font-size: $font-size;
     font-weight: bold;
   
     position: absolute;
-    top:0;right:0;bottom:0;left:0;
+    top:$top-bottom-size;right:0;bottom:$top-bottom-size;left:0;
     overflow: auto;
     margin: auto;
-  }
+
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}

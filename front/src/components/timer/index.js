@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DaysCompoenet from './days';
 import TimeComponent from './time';
+import './timer.scss'
 
 class TimerContainer extends Component {
     constructor(props) {
@@ -24,8 +25,8 @@ class TimerContainer extends Component {
     render() {
         const time = this.state.time;
         return (
-            <div id='timer-container'>
-                <DaysCompoenet time={time} />
+            <div id='timer'>
+                <DaysCompoenet time={time} /><br/>
                 <TimeComponent time={time} />
             </div>
         )

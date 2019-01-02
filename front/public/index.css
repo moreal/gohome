@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: url('https://thumbs.gfycat.com/ForsakenEasygoingBrownbutterfly-poster.jpg');
 }
 
 code {
@@ -15,9 +17,10 @@ code {
 
 #timer-container {
   font-size: 12vh;
+
   position: absolute;
   top:0;right:0;bottom:0;left:0;
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -33,5 +36,5 @@ code {
   -moz-box-pack: center;
   -moz-box-align: center;
   -ms-box-pack: center;
-  -ms-box-align: center;
+  -ms-box-align: center; */
 }

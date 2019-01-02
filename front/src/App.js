@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
-import TimerComponent from './components/Timer';
+import TimerContainer from './components/timer';
 
 const App = () => (
-  <TimerComponent time={10}/>
+  <TimerContainer time={new Date(2019, 1, 1)}/>
 )
 
 export default App;

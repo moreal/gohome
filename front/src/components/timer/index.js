@@ -22,7 +22,7 @@ class TimerContainer extends Component {
     }
 
     render() {
-        const { time } = this.state;
+        const time = this.state.time;
         return (
             <div id='timer-container'>
                 <DaysCompoenet time={time} />

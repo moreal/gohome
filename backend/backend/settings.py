@@ -25,19 +25,17 @@ SECRET_KEY = 'tz&7xqht1g0)ymrg#12^s^2k1#zc_uflp24!6&gzxsq31imnrm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
+    'gohome.apps.GohomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_countries'
+    'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -120,5 +118,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static/static'),
 ]

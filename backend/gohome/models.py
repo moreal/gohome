@@ -1,5 +1,5 @@
 from django.db import models
-from django_countires.fields import CountryField
+from django_countries.fields import CountryField
 
 class School(models.Model):
     site = models.CharField(max_length=2083)

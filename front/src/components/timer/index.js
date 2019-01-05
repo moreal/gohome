@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import DaysCompoenet from './days';
 import TimeComponent from './time';
+import SchoolComponent from './school';
+import Axios from "axios";
 import './timer.scss'
 
 class TimerContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            time: props.time
-        }
-    }
 
     componentDidMount() {
+        
+        Axios.get('/api/time').then(resp => {
+            this.setState({
+                time: resp.time,
+                school_name: resp.school_name,
+            });
+        });
+
         setInterval(() => {
             const next_time = this.state.time;
             next_time.setSeconds(next_time.getSeconds() - 1);
@@ -23,11 +27,12 @@ class TimerContainer extends Component {
     }
 
     render() {
-        const time = this.state.time;
+        const { time, school_name } = this.state;
         return (
             <div id='timer'>
                 <DaysCompoenet time={time} /><br/>
                 <TimeComponent time={time} />
+                <SchoolComponent name={school_name}/>
             </div>
         )
     }

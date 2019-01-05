@@ -3,7 +3,7 @@ from django_countries.fields import CountryField
 
 class School(models.Model):
     name = models.CharField(max_length=100, default='')
-    site = models.CharField(max_length=2083)
+    site = models.URLField()
     country = CountryField()
 
 class HomeComingDay(models.Model):

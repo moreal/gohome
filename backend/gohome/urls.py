@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
+from .views.api import time
+
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<str:path>', views.serve_static, name='static'),
+    path('api/time', time.TimeView, name='time_view'),
 ]

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,YAAa;EACX,SAAS,ECAC,IAAI",
+"sources": ["school.scss","../_variables.scss"],
+"names": [],
+"file": "school.css"
+}

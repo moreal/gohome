@@ -9,30 +9,37 @@ class TimerContainer extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            time: null,
+            time: null, // time default value
             school_name: 'Loading..'
         };
 
-        Axios.get('http://localhost:8000/api/time')
+        TimerContainer.fetchTime()
             .then(({data}) => {
-            console.log(data);
-            this.setState({
-                time: new Date(data.time),
-                school_name: data.school_name,
-            });
-
-            setInterval(() => {
-                console.log(this.state);
-                const next_time = this.state.time;
-                next_time.setSeconds(next_time.getSeconds() - 1);
+                console.log(data);
 
                 this.setState({
-                    time: next_time
+                    time: new Date(data.time),
+                    school_name: data.school_name,
                 });
-            }, 1000);
-        });
+
+                setInterval(this.tick, 1000);
+            });
     };
+
+    static fetchTime() {
+        return Axios.get('http://localhost:8000/api/time');
+    }
+
+    tick() {
+        const next_time = this.state.time;
+        next_time.setSeconds(next_time.getSeconds() - 1);
+
+        this.setState({
+            time: next_time
+        });
+    }
 
     render() {
         const { time, school_name } = this.state;

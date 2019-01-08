@@ -7,35 +7,43 @@ import './timer.scss'
 
 class TimerContainer extends Component {
 
-    componentDidMount() {
-        
-        Axios.get('/api/time').then(resp => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            time: null,
+            school_name: 'Loading..'
+        };
+
+        Axios.get('http://localhost:8000/api/time')
+            .then(({data}) => {
+            console.log(data);
             this.setState({
-                time: resp.time,
-                school_name: resp.school_name,
+                time: new Date(data.time),
+                school_name: data.school_name,
             });
+
+            setInterval(() => {
+                console.log(this.state);
+                const next_time = this.state.time;
+                next_time.setSeconds(next_time.getSeconds() - 1);
+
+                this.setState({
+                    time: next_time
+                });
+            }, 1000);
         });
-
-        setInterval(() => {
-            const next_time = this.state.time;
-            next_time.setSeconds(next_time.getSeconds() - 1);
-
-            this.setState({
-                time: next_time
-            })
-        }, 1000)
-    }
+    };
 
     render() {
         const { time, school_name } = this.state;
-        return (
+        return time != null ? (
             <div id='timer'>
-                <DaysCompoenet time={time} /><br/>
-                <TimeComponent time={time} />
+                <DaysCompoenet time={time}/><br/>
+                <TimeComponent time={time}/>
                 <SchoolComponent name={school_name}/>
             </div>
-        )
+        ) : (<div id={'timer'}>Loading..!</div>);
     }
-};
+}
 
 export default TimerContainer;

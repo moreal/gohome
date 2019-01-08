@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import "school.scss";
+import React from "react";
+import "./school.scss";
 
-const SchoolComponent = () => (
-    <span id='school-name'>{this.props.name}</span>
-)
+const SchoolComponent = (props) => (
+    <span id='school-name'>{props.name}</span>
+);
 
 export default SchoolComponent;

@@ -2,7 +2,7 @@ import React from "react";
 import "./school.scss";
 
 const SchoolComponent = (props) => (
-    <span id='school-name'>{props.name}</span>
+    <p id='school-name'>{props.name}</p>
 );
 
 export default SchoolComponent;

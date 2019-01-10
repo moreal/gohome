@@ -7,14 +7,14 @@ class TimeComponent extends Component {
         const time = this.props.time;
         const [ hours, minutes, seconds ] = TimeLib.get_time_elements(time);
         return (
-            <span id='time'>
+            <p id='time'>
                 {hours}
                 <span className='middle-size'>시간</span>{' '}
                 {minutes}
                 <span className='middle-size'>분</span>{' '}
                 {seconds}
                 <span className='middle-size'>초</span>
-            </span>
+            </p>
         )
     }
 }

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAEA,KAAM;EACF,SAAS,ECAD,IAAI;EDCZ,KAAK,ECHI,KAAK;EDId,OAAO,EAAE,YAAY;EAErB,kBAAa;IACT,SAAS,EAAE,GAAgB",
+"mappings": "AAEA,KAAM;EACF,SAAS,ECAD,IAAI;EDCZ,KAAK,ECHI,KAAK;EDId,MAAM,EAAE,CAAC;EAET,kBAAa;IACT,SAAS,EAAE,GAAgB",
 "sources": ["time.scss","../_variables.scss"],
 "names": [],
 "file": "time.css"

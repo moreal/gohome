@@ -17,14 +17,14 @@ class TimerContainer extends Component {
 
         TimerContainer.fetchTime()
             .then(({data}) => {
-                console.log(data);
-
                 this.setState({
-                    time: new Date(data.time),
+                    time: new Date(new Date() - data.time),
                     school_name: data.school_name,
                 });
 
-                setInterval(this.tick, 1000);
+                setInterval(() => {
+                    this.tick();
+                }, 1000);
             });
     };
 
@@ -39,13 +39,13 @@ class TimerContainer extends Component {
         this.setState({
             time: next_time
         });
-    }
+    };
 
     render() {
         const { time, school_name } = this.state;
         return time != null ? (
             <div id='timer'>
-                <DaysCompoenet time={time}/><br/>
+                <DaysCompoenet time={time}/>
                 <TimeComponent time={time}/>
                 <SchoolComponent name={school_name}/>
             </div>

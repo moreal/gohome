@@ -1,5 +1,7 @@
 @import '../variables';
 
 #school-name {
-  font-size: $font-size;
+  font-size: $font-size - 7vh;
+  color: $days-color;
+  margin: 0;
 }

@@ -1,7 +1,7 @@
 #time {
   font-size: 10vh;
   color: white;
-  display: inline-block; }
+  margin: 0; }
   #time .middle-size {
     font-size: 5vh; }
 

@@ -7,7 +7,7 @@ class DaysComponent extends Component {
         const time = this.props.time;
         const dday = TimeLib.get_dday(time);
         return (
-            <span id='days'>{dday}</span>
+            <p id='days'>{dday}</p>
         )
     }
 }

@@ -3,7 +3,7 @@
 #time {
     font-size: $font-size;
     color: $time-color;
-    display: inline-block;
+    margin: 0;
     
     .middle-size {
         font-size: $font-size - 5vh;

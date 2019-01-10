@@ -4,7 +4,6 @@ class CorsMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request):
-        print('test')
         response = self.get_response(request)
         response['Access-Control-Allow-Origin'] = '*'
         return response

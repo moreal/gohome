@@ -12,6 +12,6 @@ class TimeView(View):
         day = HomeComingDay.objects.select_related('school').get(school__name=school_name)
 
         return HttpResponse(json.dumps({
-            'time': int(day.end_datetime.timestamp()) * 1000,
+            'time': int(day.end_datetime.timestamp()),
             'school_name': day.school.name,
         }))

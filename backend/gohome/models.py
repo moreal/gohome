@@ -7,6 +7,6 @@ class School(models.Model):
     country = CountryField()
 
 class HomeComingDay(models.Model):
-    school_id = models.ForeignKey(School, on_delete=models.DO_NOTHING)
+    school = models.ForeignKey(School, on_delete=models.DO_NOTHING)
     start_datetime = models.DateTimeField()
     end_datetime = models.DateTimeField()

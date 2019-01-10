@@ -3,7 +3,10 @@ import DaysCompoenet from './days';
 import TimeComponent from './time';
 import SchoolComponent from './school';
 import Axios from "axios";
+import CountdownTimer from '../../lib/CountdownTimer';
 import './timer.scss'
+
+const hostname = 'http://localhost:8000';
 
 class TimerContainer extends Component {
 
@@ -11,14 +14,20 @@ class TimerContainer extends Component {
         super(props);
 
         this.state = {
-            time: null, // time default value
+            timer: null, // time default value
             school_name: 'Loading..'
         };
 
         TimerContainer.fetchTime()
             .then(({data}) => {
+                const now = Math.floor(new Date().getTime() / 1000);
+                console.log(new Date(data.time * 1000));
+                console.log(new Date(now * 1000));
+                const remain_time = data.time - now;
+                const timer = new CountdownTimer(remain_time);
+
                 this.setState({
-                    time: new Date(new Date() - data.time),
+                    timer: timer,
                     school_name: data.school_name,
                 });
 
@@ -29,24 +38,24 @@ class TimerContainer extends Component {
     };
 
     static fetchTime() {
-        return Axios.get('http://localhost:8000/api/time');
+        return Axios.get(hostname+'/api/time');
     }
 
     tick() {
-        const next_time = this.state.time;
-        next_time.setSeconds(next_time.getSeconds() - 1);
+        const timer = this.state.timer;
+        timer.countdown();
 
         this.setState({
-            time: next_time
+            timer: timer
         });
     };
 
     render() {
-        const { time, school_name } = this.state;
-        return time != null ? (
+        const { timer, school_name } = this.state;
+        return timer != null ? (
             <div id='timer'>
-                <DaysCompoenet time={time}/>
-                <TimeComponent time={time}/>
+                <DaysCompoenet timer={timer}/>
+                <TimeComponent timer={timer}/>
                 <SchoolComponent name={school_name}/>
             </div>
         ) : (<div id={'timer'}>Loading..!</div>);

@@ -4,15 +4,14 @@ import "./time.scss"
 
 class TimeComponent extends Component {
     render() {
-        const time = this.props.time;
-        const [ hours, minutes, seconds ] = TimeLib.get_time_elements(time);
+        const timer = this.props.timer;
         return (
             <p id='time'>
-                {hours}
+                {timer.getHours()}
                 <span className='middle-size'>시간</span>{' '}
-                {minutes}
+                {timer.getMinutes()}
                 <span className='middle-size'>분</span>{' '}
-                {seconds}
+                {timer.getSeconds()}
                 <span className='middle-size'>초</span>
             </p>
         )

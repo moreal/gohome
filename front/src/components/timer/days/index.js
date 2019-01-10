@@ -4,10 +4,9 @@ import "./days.scss";
 
 class DaysComponent extends Component {
     render = () => {
-        const time = this.props.time;
-        const dday = TimeLib.get_dday(time);
+        const timer = this.props.timer;
         return (
-            <p id='days'>{dday}</p>
+            <p id='days'>{timer.getDays()} DAY</p>
         )
     }
 }

@@ -4,9 +4,7 @@ import TimeComponent from './time';
 import SchoolComponent from './school';
 import Axios from "axios";
 import CountdownTimer from '../../lib/CountdownTimer';
-import './timer.scss'
-
-const hostname = 'http://localhost:8000';
+import './timer.scss';
 
 class TimerContainer extends Component {
 
@@ -38,7 +36,7 @@ class TimerContainer extends Component {
     };
 
     static fetchTime() {
-        return Axios.get(hostname+'/api/time');
+        return Axios.get(`http://localhost:8000/api/time`);
     }
 
     tick() {

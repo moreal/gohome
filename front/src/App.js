@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import TimerContainer from './components/timer';
 
 const App = () => (
-  <TimerContainer />
+    <Fragment>
+        <TimerContainer />
+    </Fragment>
 );
 
 export default App;

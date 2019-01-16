@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TimeLib from '../../../lib/TimeLib';
 import "./time.scss"
 
 class TimeComponent extends Component {

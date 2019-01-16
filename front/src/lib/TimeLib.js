@@ -1,6 +1,6 @@
 class TimeLib {
     static get_dday(datetime) {
-        return `D - ${datetime.getDay() === 0 ? 'Day' : datetime.getDay() }`;
+        return `D - ${(Number(datetime) / 1000) <= 0 ? 'Day' : datetime.getDay() }`;
     }
 
     static get_time_elements(datetime) {

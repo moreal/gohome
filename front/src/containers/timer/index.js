@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DaysCompoenet from './days';
+import DaysComponent from './days';
 import TimeComponent from './time';
 import SchoolComponent from './school';
 import Axios from "axios";
@@ -52,7 +52,7 @@ class TimerContainer extends Component {
         const { timer, school_name } = this.state;
         return timer != null ? (
             <div id='timer'>
-                <DaysCompoenet timer={timer}/>
+                <DaysComponent timer={timer}/>
                 <TimeComponent timer={timer}/>
                 <SchoolComponent name={school_name}/>
             </div>

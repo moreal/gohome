@@ -1,7 +1,6 @@
 from django.views import View
 from django.http import HttpRequest, HttpResponse
 import json
-import time
 from gohome.models import HomeComingDay
 
 
